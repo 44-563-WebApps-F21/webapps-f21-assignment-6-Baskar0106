@@ -5,8 +5,8 @@
     </head>
  
 <body>
-<h1>Pass phraseby Bhaskar Venkata Prudhvi Bobbala</h1>
-<h2>Getting input</h2>
+<h1 style=color:yellow> Pass phraseby Bhaskar Venkata Prudhvi Bobbala</h1>
+<h2 style=color:rgb(15,230,68)>Getting input</h2>
 
 <form>
     <label for="secret_phrase">Enter the secret phrase </label>
@@ -15,7 +15,7 @@
     <label for="check_phrase">Enter a phrase </label>
     <input type ="text" id="check_phrase" name="check_phrase" autofocus> <br>
 
-    <input type="button" onclick="processPhrase()" value="Check the phrase">
+    <input type="button" style=color:red onclick="processPhrase()" value="Check the phrase">
 </form>
 
 
@@ -24,8 +24,11 @@
 <script> 
  var correct=0;
  var wrong=0;
+ var count = 0
 
-function processPhrase(){
+        
+
+        function processPhrase(){
     console.log("Getting form values")
     secret_phrase = document.getElementById("secret_phrase").value
     check_phrase = document.getElementById("check_phrase").value
@@ -38,12 +41,14 @@ function processPhrase(){
         alert("Access allowed.")
         out.innerHTML = "Correct Count: " + correct
     }
-     else 
-     {
-        wrong += 1
-        alert("Access denied.")
-        out.innerHTML = "Wrong Count: " + wrong
-     }   
+    else {
+                wrong++;
+                alert("Access denied");
+                out.innerHTML = "wrong :" + wrong + "correct :" + correct;
+            }
+            if (wrong > 3) {
+                alert("Account locked");
+            }
 }
 </script>
 <div class="container">
