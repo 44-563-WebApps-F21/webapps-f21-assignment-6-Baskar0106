@@ -2,4 +2,4 @@
 Assignment introduction Java Script and DOM
 [Hosted at](https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-Baskar0106/pass.html)
 [Hosted at](https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-Baskar0106/arithmetic.html)
-[Hosted at](https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-Baskar0106/Car Assignment.html)
+[Hosted at](https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-Baskar0106/car.html)
