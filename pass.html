@@ -43,10 +43,35 @@ function processPhrase(){
         wrong += 1
         alert("Access denied.")
         out.innerHTML = "Wrong Count: " + wrong
-     }
-     
+     }   
 }
 </script>
+<div class="container">
+    <img src="Bearcat.jpg" class="img-thumbnail" alt="Bearcat"  id="images" width=200  height=200 onclick="newImage()">
+     
+</div>
+
+    <script>
+        var usingImage = 1;
+        function newImage(){
+             
+             var image = document.getElementById('images');
+            switch (usingImage) {
+                case 1:
+                    image.src = "Bearcat.jpg ";
+                    usingImage = usingImage + 1
+                    break;
+                case 2:
+                    image.src = "Ostrich.jpg";
+                    usingImage = usingImage + 1
+                    break;
+                case 3:
+                    image.src = "Bengal Tiger.jpg";
+                    usingImage = 1
+                    break;
+            }
+        }
+    </script>
 
 </body>
 </html> 
