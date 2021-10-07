@@ -5,40 +5,78 @@
         
     </head>
  
-<body>
-    <h1>computes by Bhaskar Venkata Prudhvi Bobbala</h1>
-
-    <h2>Getting input</h2>
-
-<form>
-    <label for="form1_base">Enter a base</label>
-    <input type ="number" id="form1_base"  min=10 max=50  value=10> <br>
-
-    <label for="form1_exponent">Enter an exponent </label>
-    <input type ="number" id="form1_exponent" value=2 autofocus> <br>
-
-    <input type="button" onclick="powers()" value="Compute">
-</form>
-<div>Result: <span id="infospan"></span></div>
-<script>
-    function powers() {
-    console.log("Getting form values")
-    base = document.getElementById("form1_base").value
-    exponent = document.getElementById("form1_exponent").value
-    var result = "";
+    <body>
+        <h1>Computes By Bhaskar Venkata Prudhvi Bobbala</h1>
+            <form>
+                <label for="base ">Enter a base</label>
+                <input type="number" id="base" value=10>
     
-    for (i = 1; i <= exponent; i++) {
-        result = result + " " + Math.pow(base, i);
-
-       
-    }
-    document.getElementById('infospan').innerHTML= result;
+                <label for="exponent ">Enter an exponent</label>
+                <input type="number" id="exponent" value=2>
     
+                <input type="button" onclick="power()" value="Compute"><br>
+            </form>
+            <p id="result">Output</p>
+            <script>
+                function power() {
+                    Base = document.getElementById("base").value;
+                    Exponent = document.getElementById("exponent").value;
+                    out = document.getElementById("result");
+                    var result = new String();
+                    var a = new Array;
+    
+                    for (i = 1; i <= Exponent; i++) {
+                        a[i] = Math.pow(Base, i);
+                        result = result.concat(a[i]);
+                        result = result + ' ';
+    
+                    }
+                    out.innerHTML = "Powers of base are : " + result + " ";
+                }
+            </script>
+            <form>
+                
+                    <input type="radio" id="plus"  onclick="processRadio()" value="plus">
+                    <label for="plus">+</label>
+                    <br>
+                    <input type="radio" id="minus" onclick="processRadio()" value="minus">
+                    <label for="minus">-</label>
+                    <br>
+                
+                    <input type="radio" id="times" onclick="processRadio()" value="times">
+                    <label for="times">*</label>
+                    <br>
 
-}
-</script>
-
-
-
-</body>
+                    <input type="radio" id="divide" onclick="processRadio()" value="divide">
+                    <label for="divide">/</label>
+                
+            </form>
+            <p id="ourResult">Our Result</p>
+            <script>
+                function processRadio() {
+                    b = document.getElementById("base").value;
+                    e = document.getElementById("exponent").value;
+                    plus = document.getElementById("plus").checked
+                    minus = document.getElementById("minus").checked
+                    times = document.getElementById("times").checked
+                    divide = document.getElementById("divide").checked
+                    output = document.getElementById("ourResult");
+    
+                    if (plus) {
+                        output.innerHTML ="Addition of base and exponent: " + (Number)(b) + Number(e)
+                    }
+                    if (minus) {
+                        output.innerHTML ="Subtraction of base and exponent: " +  b - e
+                    }
+                    if (times) {
+                        output.innerHTML ="Multiplication of base and exponent: " +  b * e
+                    }
+                    if (divide) {
+                        output.innerHTML ="Division of base and exponent: " +  b / e
+                    }
+                }
+            </script>
+    
+    
+    </body>
 </html> 
